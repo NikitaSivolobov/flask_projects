@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -7,23 +7,9 @@ app = Flask(__name__)
 @app.route("/index")
 
 def index():
-    return '''
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <title>Home page</title>
-                <meta charset="utf-8">
-            </head>
+    return render_template('index.html')
 
-            <body>
-                <p>Hello, Flask!</p>
-            </body>
 
-        </html>
 
-        <script>
-            alert('Wow')
-        </script>
-        '''
 if __name__ == '__main__':
     app.run()
