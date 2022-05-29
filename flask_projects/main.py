@@ -13,6 +13,13 @@ def index():
                            title='Home Page',
                            project_number=100)
 
+@app.route("/<float:num1>/<operation>/<float:num2>/")
+def calculator_jinja(num1, operation, num2):
+    return render_template('index.html',
+                           num1=num1,
+                           operation=operation,
+                           num2=num2)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

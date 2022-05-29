@@ -9,8 +9,24 @@
 <body>
     <p>Hello, Flask! Well done, {{ name }}! </p>
     <p>You have completed {{ project_number }} project(s).</p>
+
     <img src="{{ url_for('static', filename='img/1.png') }}"
     alt='Img' width="283" height="213">
+    <p>
+        {% if operation == '+' %}
+        {{ num1+num2 }}
+        {% elif operation == '-' %}
+        {{ num1-num2 }}
+        {% elif operation == ':' and num2 != 0 and num2 != 0.0 %}
+        {{ num1/num2 }}
+        {% elif operation == '*' %}
+        {{ num1*num2 }}
+        {% elif operation == '**' %}
+        {{ num1**num2 }}
+        {% else %}
+        Ошибка
+        {% endif %}
+    </p>
 </body>
 
 <script>
