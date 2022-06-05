@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <p>Items:</p>
+    <ul>
+        {% for item in ['Pen', 'Pencil', 'Notebook'] %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for user in {} %}
+            <li>{{ user }}</li>
+        {% else %}
+            <li>dict is empty</li>
+        {% endfor %}
+    </ul>
+
+    {% for name, details in {'Igor': [22, 'Trainer'], 'Itgenio': [4, 'Admin']}.items() %}
+        <p>{{ name }}</p>
+        <p>
+            <ul>
+                {% for detail in details %}
+                    <li>{{ detail }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+    {% endfor %}
+
+    <ul>
+        {% for letter in 'abc' %}
+            <li>{{ loop.index }} - {{ letter }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
