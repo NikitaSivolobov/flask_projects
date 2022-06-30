@@ -27,6 +27,13 @@
         Ошибка
         {% endif %}
     </p>
+    {% import "macros.html" as macros %}
+    {{ macros.get_jinja_sum(1, 2, 3, a=1, b=2, c=3) }}
+    {{ macros.get_jinja_sum(4, 1) }}
+
+    {% from "macros.html" import get_jinja_sum %}
+    {{ get_jinja_sum(1, 2, 3, a=1, b=2, c=3) }}
+
 </body>
 
 <script>

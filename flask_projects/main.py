@@ -20,10 +20,16 @@ def calculator_jinja(num1, operation, num2):
                            operation=operation,
                            num2=num2)
 
-@app.route('/module3_lesson2_step5/')
+@app.route("/module3_lesson2_step5/")
 def module3_lesson2_step5():
     return render_template(
         'module3_lesson2_step5.html',
+    )
+
+@app.route("/macros/")
+def macros():
+    return render_template(
+        'index.html',
     )
 
 if __name__ == '__main__':
